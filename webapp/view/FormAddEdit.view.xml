@@ -1,0 +1,59 @@
+<mvc:View xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="br.com.idxtec.Implemento.controller.FormAddEdit"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page showHeader="false">
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<Panel headerText="{view>/titulo}">
+							<f:SimpleForm id="form"
+								editable="true"
+								layout="ResponsiveGridLayout"
+								labelSpanXL="4"
+								labelSpanL="4"
+								labelSpanM="4"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="0"
+								emptySpanL="0"
+								emptySpanM="0"
+								emptySpanS="0"
+								columnsXL="3"
+								columnsL="2"
+								columnsM="2"
+								singleContainerFullSize="false">
+								<core:Title/>
+								<Label text="Descrição" labelFor="descricao"/>
+								<Input id="descricao" value="{model>/Descricao}" required="true"/>
+								
+								<Label text="Número" labelFor="numero"/>
+								<Input id="numero" value="{model>/Numero}" required="true"/>
+								
+								<Label text="Número de Série" labelFor="numeroserie"/>
+								<Input id="numeroserie" value="{model>/NumeroSerie}"/>
+								
+								<Label text="Observações" labelFor="sucata"/>
+								<TextArea id="observacoes" value="{model>/Observacoes}" rows="6"/>
+								
+								<Label text="Inativo" labelFor="inativo"/>
+								<CheckBox id="inativo" selected="{model>/Inativo}"/>
+
+							</f:SimpleForm> 
+						</Panel>
+					</VBox> 	
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button text="Salvar" press="onSalvar" type="Accept"/>
+   						<Button text="Fechar" press="onVoltar" type="Reject"/>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
